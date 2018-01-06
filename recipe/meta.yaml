@@ -1,7 +1,7 @@
 {%set name = "textblob" %}
-{%set version = "0.13.0" %}
+{%set version = "0.15.0" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "fce0eb3fcd1a37ad70ab159090eeb2b9cb705354ca560cd8e435ae3835944d21" %}
+{%set hash_val = "5eafdb41f2ca46e6131d8429473ffd835d520c98cbe840c327c00ce8c2114810" %}
 
 package:
   name: {{ name }}
