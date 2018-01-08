@@ -1,20 +1,23 @@
-{%set name = "textblob" %}
-{%set version = "0.13.0" %}
-{%set hash_type = "sha256" %}
-{%set hash_val = "fce0eb3fcd1a37ad70ab159090eeb2b9cb705354ca560cd8e435ae3835944d21" %}
+{% set name = "textblob" %}
+{% set version = "0.15.0" %}
+{% set bundle = "tar.gz" %}
+{% set hash_type = "sha256" %}
+{% set hash_val = "5eafdb41f2ca46e6131d8429473ffd835d520c98cbe840c327c00ce8c2114810" %}
+{% set build = 0 %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  fn: {{ name }}-{{ version }}.{{ bundle }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
   {{ hash_type }}: {{ hash_val }}
 
 build:
-  number: 0
+  number: {{ build }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
+  noarch: python
 
 requirements:
   build:
