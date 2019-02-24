@@ -1,8 +1,8 @@
 {% set name = "textblob" %}
-{% set version = "0.15.2" %}
+{% set version = "0.15.3" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash_val = "574f30be68a5afcc9f0ccfad088394833343a611c4f0a20473622e07c02cac0f" %}
+{% set hash_val = "7ff3c00cb5a85a30132ee6768b8c68cb2b9d76432fec18cd1b3ffe2f8594ec8c" %}
 {% set build = 0 %}
 
 package:
