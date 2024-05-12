@@ -1,8 +1,7 @@
 {% set name = "textblob" %}
-{% set version = "0.15.3" %}
+{% set version = "0.17.1" %}
 {% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash_val = "7ff3c00cb5a85a30132ee6768b8c68cb2b9d76432fec18cd1b3ffe2f8594ec8c" %}
+{% set hash_val = "8dc0875dfab1eaf0dc772a9dbc4afaa9ca93d0e35cd62cb792f3a38e067ab68f" %}
 {% set build = 0 %}
 
 package:
@@ -12,7 +11,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.{{ bundle }}
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash_val }}
+  sha256: {{ hash_val }}
 
 build:
   number: 0
@@ -20,7 +19,7 @@ build:
   noarch: python
 
 requirements:
-  build:
+  host:
     - python
     - setuptools
 
@@ -38,7 +37,7 @@ about:
   home: https://github.com/sloria/TextBlob
   license: MIT
   license_file: LICENSE
-  summary: 'Simple, Pythonic text processing. Sentiment analysis, part-of-speech tagging, noun phrase parsing, and more.'
+  summary: Simple, Pythonic text processing. Sentiment analysis, part-of-speech tagging, noun phrase parsing, and more.
   license_family: MIT
   doc_url: https://textblob.readthedocs.io/en/dev/
   dev_url: https://github.com/sloria/TextBlob
