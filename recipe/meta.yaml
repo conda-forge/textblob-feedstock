@@ -1,9 +1,8 @@
 {% set name = "textblob" %}
 {% set version = "0.15.3" %}
 {% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
 {% set hash_val = "7ff3c00cb5a85a30132ee6768b8c68cb2b9d76432fec18cd1b3ffe2f8594ec8c" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 package:
   name: {{ name }}
@@ -11,24 +10,26 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash_val }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
+  sha256: {{ hash_val }}
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record=record.txt
   noarch: python
 
 requirements:
-  build:
-    - python
+  host:
+    - python {{ python_min }}
     - setuptools
 
   run:
-    - python
+    - python >={{ python_min }}
     - nltk >=3.1
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - textblob
     - textblob.en
