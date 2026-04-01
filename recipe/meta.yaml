@@ -1,8 +1,7 @@
 {% set name = "textblob" %}
-{% set version = "0.15.3" %}
+{% set version = "0.20.0" %}
 {% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash_val = "7ff3c00cb5a85a30132ee6768b8c68cb2b9d76432fec18cd1b3ffe2f8594ec8c" %}
+{% set hash_val = "ae9bef3a16cecb4aae3e995cc8c6fe98a9d2a6ffdd58990dcd68e817e8d66b9e" %}
 {% set build = 0 %}
 
 package:
@@ -11,8 +10,8 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash_val }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
+  sha256: {{ hash_val }}
 
 build:
   number: 0
