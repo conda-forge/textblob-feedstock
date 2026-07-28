@@ -1,38 +1,36 @@
-{% set name = "textblob" %}
-{% set version = "0.15.3" %}
-{% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash_val = "7ff3c00cb5a85a30132ee6768b8c68cb2b9d76432fec18cd1b3ffe2f8594ec8c" %}
-{% set build = 0 %}
+{% set version = "0.20.1" %}
 
 package:
-  name: {{ name }}
+  name: textblob
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash_val }}
+  url: https://pypi.org/packages/source/t/textblob/textblob-{{ version }}.tar.gz
+  sha256: fbd1a3307532e9dddb8f50284874559e01020e79b5fe5ae4c1da709a9e2087ea
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
-  build:
-    - python
-    - setuptools
-
+  host:
+    - python {{ python_min }}
+    - flit-core <4
+    - pip
   run:
-    - python
+    - python >={{ python_min }}
     - nltk >=3.1
 
 test:
   imports:
     - textblob
     - textblob.en
-    - textblob.unicodecsv
+  commands:
+    - pip check
+  requires:
+    - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/sloria/TextBlob
@@ -46,3 +44,4 @@ about:
 extra:
   recipe-maintainers:
     - pmlandwehr
+    - jan-janssen
