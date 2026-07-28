@@ -39,8 +39,7 @@ about:
   summary: Simple, Pythonic text processing. Sentiment analysis, part-of-speech tagging, noun phrase parsing, and more.
   license: MIT
   license_file: LICENSE
-  homepage: https://pypi.org/project/textblob/
-  documentation: https://textblob.readthedocs.io/en/dev/
+  homepage: https://textblob.readthedocs.io/en/dev/
   repository: https://github.com/sloria/TextBlob
 
 extra:
