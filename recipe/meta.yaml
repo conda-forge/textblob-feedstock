@@ -26,7 +26,6 @@ test:
   imports:
     - textblob
     - textblob.en
-    - textblob.unicodecsv
   commands:
     - pip check
   requires:
